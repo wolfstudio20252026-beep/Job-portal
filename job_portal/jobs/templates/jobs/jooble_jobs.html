@@ -1,0 +1,46 @@
+{% extends 'jobs/base.html' %}
+
+{% block content %}
+
+<h1>Пошук вакансій Jooble</h1>
+
+<form method="get">
+
+    <input
+        type="text"
+        name="keyword"
+        placeholder="Посада"
+        value="{{ keyword }}"
+    >
+
+    <button type="submit">
+        Знайти
+    </button>
+
+</form>
+
+<hr>
+
+{% for job in jobs %}
+
+<h3>{{ job.title }}</h3>
+
+<p>{{ job.company }}</p>
+
+<p>{{ job.location }}</p>
+
+<p>{{ job.salary }}</p>
+
+<a href="{{ job.link }}" target="_blank">
+    Відкрити вакансію
+</a>
+
+<hr>
+
+{% empty %}
+
+<p>Вакансій не знайдено.</p>
+
+{% endfor %}
+
+{% endblock %}

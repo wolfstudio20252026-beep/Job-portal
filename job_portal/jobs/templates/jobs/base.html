@@ -1,0 +1,39 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Portal</title>
+
+    <link rel="stylesheet" href="{% static 'jobs/css/style.css' %}">
+</head>
+<body>
+
+<nav>
+    <a href="{% url 'home' %}">Головна</a>
+    <a href="{% url 'vacancies' %}">
+        Вакансії
+    </a>
+    <a href="{% url 'articles' %}">
+        Статті
+    </a>
+    <a href="{% url 'add_article' %}">
+        Додати статтю
+    </a>
+    <a href="{% url 'about' %}">
+        Про нас
+    </a>
+    <a href="{% url 'jooble_jobs' %}">
+        Пошук API
+    </a>
+</nav>
+
+<hr>
+
+{% block content %}
+{% endblock %}
+
+</body>
+</html>

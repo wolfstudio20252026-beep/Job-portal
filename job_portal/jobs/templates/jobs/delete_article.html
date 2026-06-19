@@ -1,0 +1,27 @@
+{% extends 'jobs/base.html' %}
+
+{% block content %}
+
+<h1>
+    Удалить статью
+</h1>
+
+<p>
+    Вы уверены что хотите удалить:
+</p>
+
+<h2>
+    {{ article.title }}
+</h2>
+
+<form method="post">
+
+    {% csrf_token %}
+
+    <button type="submit">
+        Да, удалить
+    </button>
+
+</form>
+
+{% endblock %}

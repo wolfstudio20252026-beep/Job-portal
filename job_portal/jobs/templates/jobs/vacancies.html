@@ -1,0 +1,44 @@
+{% extends 'jobs/base.html' %}
+
+{% block content %}
+
+<h1>Вакансії</h1>
+<form method="get">
+
+    <input
+        type="text"
+        name="search"
+        placeholder="Поиск вакансии..."
+        value="{{ search }}"
+    >
+
+    <button type="submit">
+        Найти
+    </button>
+
+</form>
+<div class="grid">
+
+    {% for vacancy in vacancies %}
+
+    <div class="card">
+
+        <h3>{{ vacancy.title }}</h3>
+
+        <p>Компанія: {{ vacancy.company }}</p>
+
+        <p>Місто: {{ vacancy.location }}</p>
+
+        <p>Зарплата: {{ vacancy.salary }}</p>
+
+        <a href="{% url 'vacancy_detail' vacancy.id %}">
+            Детальніше
+        </a>
+
+        <hr>
+
+{% endfor %}
+
+
+
+{% endblock %}

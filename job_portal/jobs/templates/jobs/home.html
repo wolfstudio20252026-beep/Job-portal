@@ -1,0 +1,37 @@
+{% extends 'jobs/base.html' %}
+<div class="hero">
+    <h1>🚀 Job Portal</h1>
+    <p>
+        Найди работу мечты уже сегодня
+    </p>
+</div>
+<div class="stats">
+
+    <div class="stat-card">
+        <h2>{{ vacancies_count }}</h2>
+        <p>Вакансий</p>
+    </div>
+
+    <div class="stat-card">
+        <h2>{{ articles_count }}</h2>
+        <p>Статей</p>
+    </div>
+
+</div>
+{% block content %}
+
+<h1>Сайт пошуку роботи</h1>
+
+<h2>Останні вакансії</h2>
+
+{% for vacancy in vacancies %}
+    <p>{{ vacancy.title }}</p>
+{% endfor %}
+
+<h2>Останні статті</h2>
+
+{% for article in articles %}
+    <p>{{ article.title }}</p>
+{% endfor %}
+
+{% endblock %}
